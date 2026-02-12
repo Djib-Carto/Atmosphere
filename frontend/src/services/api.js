@@ -10,16 +10,3 @@ export const getCategories = async () => {
     return Promise.resolve(CATEGORIES);
 };
 
-export const subscribeEmail = async (email) => {
-    // Google Apps Script Web App URL
-    const response = await fetch(API_BASE_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Important for Google Apps Script
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-    });
-    // With no-cors, we can't check response.ok, so we assume success if no error is thrown
-    return { status: "success" };
-};

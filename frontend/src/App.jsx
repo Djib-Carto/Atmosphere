@@ -4,7 +4,6 @@ import WorldWindMap from './components/WorldWindMap';
 import LayerControl from './components/LayerControl';
 import Legend from './components/Legend';
 import DjiboutiDashboard from './components/DjiboutiDashboard';
-import SubscriptionModal from './components/SubscriptionModal';
 import {
   RotateCw, MapPin, Wind, Zap, Clock, Play, Pause,
   Globe, Satellite, ChevronRight, Radio, Camera,
@@ -98,18 +97,8 @@ function App() {
   const [activeLayer, setActiveLayer] = useState(null);
   const [loading, setLoading] = useState(true);
   const [splashDone, setSplashDone] = useState(false);
-  const [showSubscription, setShowSubscription] = useState(false);
   const [opacity, setOpacity] = useState(0.7);
 
-  // Check subscription status
-  useEffect(() => {
-    if (splashDone) {
-      const status = localStorage.getItem('hasSubscribed');
-      if (!status) {
-        setShowSubscription(true);
-      }
-    }
-  }, [splashDone]);
   const [autoRotate, setAutoRotate] = useState(false);
   const [timeOffset, setTimeOffset] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -452,10 +441,6 @@ function App() {
           </div>
         </div>
       </div>
-      {/* Subscription Modal */}
-      {showSubscription && (
-        <SubscriptionModal onClose={() => setShowSubscription(false)} />
-      )}
     </div>
   );
 }

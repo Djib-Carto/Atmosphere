@@ -35,8 +35,6 @@ Add these secrets:
 | `VITE_API_URL` | The Web App URL from Step 1 |
 | `GOOGLE_SHEET_ID` | Your Google Sheet ID (from the URL) |
 | `GOOGLE_CREDENTIALS` | The entire content of `backend/credentials.json` |
-| `SMTP_USER` | Your Gmail address |
-| `SMTP_PASSWORD` | Your Gmail App Password ([create one here](https://myaccount.google.com/apppasswords)) |
 
 ## Step 3: Push to GitHub
 
@@ -60,15 +58,6 @@ git push -u origin main
 2. Enter an email in the subscription modal
 3. Check your Google Sheet - the email should appear immediately
 
-## Step 6: Test Daily Reports (Optional)
-
-The daily report runs automatically at 8:00 AM UTC. To test it manually:
-
-1. Go to **Actions** tab
-2. Click on "Daily Air Quality Report"
-3. Click **Run workflow** > **Run workflow**
-4. Check the logs to see if emails were sent
-
 ---
 
 ## Troubleshooting
@@ -77,7 +66,3 @@ The daily report runs automatically at 8:00 AM UTC. To test it manually:
 - Verify the `VITE_API_URL` secret matches your Google Apps Script Web App URL
 - Check that the Google Apps Script is deployed as "Anyone" can access
 
-**Daily reports not sending?**
-- Verify all secrets are set correctly
-- Check the Action logs for error messages
-- Ensure your Gmail App Password is correct

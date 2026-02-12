@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AirQualityMap
 
 Application web de visualisation de la qualité de l’air en temps quasi réel (Données ECMWF/CAMS).
@@ -52,3 +53,21 @@ L'application sera accessible sur l'URL indiquée (généralement `http://localh
 ## Crédits
 
 Données atmosphériques fournies par CAMS / ECMWF.
+=======
+### Hi mouga👋
+
+<!--
+**Djib-Carto/Djib-Carto** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
+>>>>>>> f927da09b6c3d7132e74a1933e175aa87c0f9bb6
