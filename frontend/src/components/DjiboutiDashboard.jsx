@@ -145,8 +145,8 @@ const DjiboutiDashboard = ({ isOpen, onClose, onNavigate }) => {
                 <div className="dj-header-left">
                     <span className="dj-flag">🇩🇯</span>
                     <div>
-                        <h2 className="dj-title">République de Djibouti</h2>
-                        <span className="dj-subtitle">Station Environnementale Nationale</span>
+                        <h2 className="dj-title">Météo Djibouti</h2>
+                        <span className="dj-subtitle">Station Environnementale</span>
                     </div>
                 </div>
                 <div className="dj-header-actions">
