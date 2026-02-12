@@ -8,5 +8,18 @@ export default defineConfig({
   server: {
     port: 3006,
     strictPort: true,
-  }
+  },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+  optimizeDeps: {
+    include: ['worldwindjs'],
+    esbuildOptions: {
+      define: {
+        global: 'globalThis',
+      },
+    },
+  },
 })
