@@ -213,7 +213,6 @@ function App() {
           logging: false,
           scale: 2, // High resolution
           useCORS: true, // REQUIRED for external legend images
-          allowTaint: true
         });
 
         // C. Composite them onto a final canvas
@@ -257,7 +256,7 @@ function App() {
         // 2. Exit Capture Mode
         setIsCapturing(false);
       }
-    }, 200); // Increased timeout slightly to ensure render
+    }, 350); // Increased timeout to ensure DataURL and UI states are ready
   };
 
   const liveTime = new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
