@@ -235,26 +235,89 @@ body {
 }
 
 /* ═══════════════════════════════════════════
-   LAYER CONTROL (LEFT SIDEBAR)
+   LAYOUT SYSTEM (COLUMNS)
    ═══════════════════════════════════════════ */
-.layer-control {
-  pointer-events: auto;
+.left-column {
   position: absolute;
   top: 24px;
   left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   width: 280px;
-  max-height: calc(100vh - 350px);
+  max-height: calc(100vh - 80px);
+  pointer-events: none;
+  z-index: 100;
+}
+
+.left-column>* {
+  pointer-events: auto;
+}
+
+/* ═══════════════════════════════════════════
+   LAYER CONTROL (SIDEBAR)
+   ═══════════════════════════════════════════ */
+.layer-control {
+  position: relative;
+  width: 100%;
+  max-height: 55vh;
   background: var(--bg-panel);
-  backdrop-filter: blur(30px) saturate(180%);
+  backdrop-filter: blur(40px) saturate(180%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.layer-list-scroll {
+  flex: 1;
   overflow-y: auto;
   scrollbar-width: thin;
-  animation: slideLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.layer-control.collapsed {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+
+.collapse-toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-accent);
+  border-radius: 50%;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.collapsed .collapse-toggle-btn {
+  right: 12px;
+  top: 12px;
+  border: none;
+  background: transparent;
+}
+
+.collapse-toggle-btn:hover {
+  transform: scale(1.1);
+  background: var(--accent);
+  color: white;
 }
 
 .layer-control::-webkit-scrollbar {
@@ -625,18 +688,13 @@ h1 {
    LEGEND
    ═══════════════════════════════════════════ */
 .legend-container {
-  pointer-events: auto;
-  position: absolute;
-  bottom: 110px;
-  left: 24px;
-  background: rgba(2, 6, 23, 0.95);
-  border: 1px solid var(--border-accent);
+  width: 100%;
+  background: rgba(2, 6, 23, 0.85);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1rem;
-  width: 260px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  animation: slideLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 100;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
 }
 
 .legend-title {

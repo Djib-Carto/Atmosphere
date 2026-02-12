@@ -108,6 +108,8 @@ function App() {
   // Capture State
   const [isCapturing, setIsCapturing] = useState(false);
 
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+
   const mapRef = useRef(null);
   const playInterval = useRef(null);
 
@@ -311,8 +313,9 @@ function App() {
       />
 
       <div className={`ui-layer ${isCapturing ? 'capturing' : ''}`}>
-        {/* Left Panel: Layer Control */}
-        <div className={isCapturing ? 'hide-on-capture' : ''}>
+
+        {/* Left Column: Docked Panels */}
+        <div className={`left-column ${isCapturing ? 'hide-on-capture' : ''}`}>
           <LayerControl
             categories={categories}
             activeCategoryId={activeCategoryId}
@@ -322,7 +325,10 @@ function App() {
             onLayerSelect={setActiveLayer}
             opacity={opacity}
             onOpacityChange={setOpacity}
+            isCollapsed={isSidebarCollapsed}
+            onToggleCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
           />
+          <Legend activeLayer={activeLayer} />
         </div>
 
         {/* Time Controller */}
@@ -393,9 +399,6 @@ function App() {
             </div>
           )}
         </div>
-
-        {/* Legend - Keep visible during capture but style differently via CSS if needed */}
-        <Legend activeLayer={activeLayer} />
 
         {/* Djibouti Dashboard - Keep visible if open, might want to hide close button in CSS */}
         <DjiboutiDashboard
