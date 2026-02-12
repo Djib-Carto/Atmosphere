@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useImperativeHandle, forwardRef, useState } from 'react';
-import WorldWind from 'worldwindjs';
+const WorldWind = window.WorldWind;
 import { SERVICE_URLS } from '../config/layers';
 
 const WorldWindMap = forwardRef(({ activeLayer, opacity, autoRotate = false, time }, ref) => {

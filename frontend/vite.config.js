@@ -10,15 +10,12 @@ export default defineConfig({
     strictPort: true,
   },
   build: {
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
-  },
-  optimizeDeps: {
-    include: ['worldwindjs'],
-    esbuildOptions: {
-      define: {
-        global: 'globalThis',
+    rollupOptions: {
+      external: ['worldwindjs'],
+      output: {
+        globals: {
+          worldwindjs: 'WorldWind',
+        },
       },
     },
   },
