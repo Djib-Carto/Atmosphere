@@ -44,9 +44,7 @@ const WorldWindMap = forwardRef(({ activeLayer, opacity, autoRotate = false, tim
             // Layers
             const layers = [
                 { layer: new WorldWind.BMNGLayer(), enabled: true },
-                { layer: new WorldWind.AtmosphereLayer(), enabled: true },
-                { layer: new WorldWind.CompassLayer(), enabled: true },
-                { layer: new WorldWind.ViewControlsLayer(wwd), enabled: true }
+                { layer: new WorldWind.AtmosphereLayer(), enabled: true }
             ];
 
             layers.forEach(l => {
