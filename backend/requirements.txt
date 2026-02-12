@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+aiosmtplib
+httpx
+python-dotenv
+email-validator
+jinja2
+gspread
+google-auth
